@@ -1,4 +1,4 @@
-var resolution = 20;
+var resolution = 50;
 var x = 0;
 var y = 0;
 const right =   [0,1,1,1];
@@ -7,6 +7,8 @@ const left =    [1,1,0,1];
 const up =      [1,1,1,0];
 const blank =   [0,0,0,0];
 var ifright = true, ifdown = true, ifleft= true, ifup = true, ifblank = true;
+var powtorzenia = 0;
+
 
 function Random(min, max) {
     min = Math.ceil(min);
@@ -78,7 +80,18 @@ document.addEventListener("DOMContentLoaded", function(){
     var Entropy_checkerX = CellX;
     var Entropy_checkerY = CellY;
     
-    for (var xd = 1; xd <resolution*resolution; xd++){
+
+    const interval = setInterval(() => {
+        
+            mainLoop();
+            
+        
+    }, 0);
+    function mainLoop(){
+        powtorzenia++;
+        if (powtorzenia > resolution*resolution){
+            clearInterval(interval);
+        }
         Entropy_checkerX = CellX;
         Entropy_checkerY = CellY;
         
@@ -141,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function(){
                             if (cells[Entropy_checkerY+1][Entropy_checkerX][0] == 4){Connectors[3] = 1;}
                             if (cells[Entropy_checkerY+1][Entropy_checkerX][0] == 5){Connectors[3] = 0;}
                         } else {Connectors[3] = undefined;}
-                        console.log(Connectors);
+                        //console.log(Connectors);
                         //now compare collected data to possible states, and declare entropy
                         ifright = true, ifdown = true, ifleft= true, ifup = true, ifblank = true;
                         for (var a = 0;a < 4; a++){
@@ -257,13 +270,14 @@ document.addEventListener("DOMContentLoaded", function(){
                 document.getElementById('cell_'+lowest[randomCell][0]+'_'+lowest[randomCell][1]).innerHTML = "<img class='img' src='o.png'>";
             }
             //cells[lowest[randomCell][1]][lowest[randomCell][0]][1] = 0;
-            console.log(lowest);
+            //console.log(lowest);
             cells[lowest[randomCell][1]][lowest[randomCell][0]][1] = 0;
             CellY = lowest[randomCell][1];
             CellX = lowest[randomCell][0];
-        //alert("kupa");
-        console.log(cells);
+
+        //console.log(cells);
+        
     }
-    //alert("kupa");
+    
 });
 
