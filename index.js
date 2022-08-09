@@ -1,4 +1,4 @@
-var resolution = 50;
+var resolution = 20;
 var x = 0;
 var y = 0;
 const right =   [0,1,1,1];
@@ -200,6 +200,13 @@ document.addEventListener("DOMContentLoaded", function(){
                             cells[Entropy_checkerY][Entropy_checkerX][1][3]+
                             cells[Entropy_checkerY][Entropy_checkerX][1][4];
                         }
+                        if (cells[Entropy_checkerY][Entropy_checkerX][1][0]+
+                            cells[Entropy_checkerY][Entropy_checkerX][1][1]+
+                            cells[Entropy_checkerY][Entropy_checkerX][1][2]+
+                            cells[Entropy_checkerY][Entropy_checkerX][1][3]+
+                            cells[Entropy_checkerY][Entropy_checkerX][1][4] == 0){
+                                //window.location.reload();
+                            } 
 
                         
                         
