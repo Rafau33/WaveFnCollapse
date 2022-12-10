@@ -1,2 +1,2 @@
 # WaveFnCollapse
-This is an utility which allows you to render simple 3D models with the support for rotation
+This is a program which generates a random pattern using simple randomness only where it is needed
