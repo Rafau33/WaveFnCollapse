@@ -6,4 +6,5 @@ Just download this repository, unzip it and run index.html in your browser. If y
 
 # Known issue
 ![image](https://user-images.githubusercontent.com/83880651/206852077-81a24960-b7d8-4e7e-9c21-795c8476bb3e.png)
+
 Because of the css's rotation issues image is not completley solid and there are white lines sometimes
